@@ -38,9 +38,8 @@ var connection = mysql.createConnection({
 });
 
 // Database setup
-connection.query('CREATE DATABASE IF NOT EXISTS ntest', function (err) {
-  if (err) throw err;
-  connection.query('USE ntest', function (err) {
+
+  connection.query('USE toy', function (err) {
     if (err) throw err;
     connection.query('CREATE TABLE IF NOT EXISTS user(' +
       'id INT NOT NULL AUTO_INCREMENT,' +  
@@ -49,8 +48,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS ntest', function (err) {
       'des VARCHAR( 128 ) NOT NULL, PRIMARY KEY (  id )' +
     ')');
   });
-});
-
+  
 // connection.connect();
 // app.get('/users', function (req, res) {
 //   connection.query('select * from user', function(err, docs) {
